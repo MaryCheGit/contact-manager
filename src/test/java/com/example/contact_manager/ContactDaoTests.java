@@ -42,7 +42,7 @@ public class ContactDaoTests {
         assertEquals("+7-999-123-45-67", saved.getPhoneNumber());
         assertEquals("ivan@email.com", saved.getEmail());
         
-        System.out.println("✅ Контакт сохранен с ID: " + saved.getId());
+        System.out.println("Контакт сохранен с ID: " + saved.getId());
     }
     
     @Test
@@ -60,7 +60,7 @@ public class ContactDaoTests {
         assertEquals("Петр", found.getFirstName());
         assertEquals("Петров", found.getLastName());
         
-        System.out.println("✅ Контакт найден: " + found.getFirstName() + " " + found.getLastName());
+        System.out.println("Контакт найден: " + found.getFirstName() + " " + found.getLastName());
     }
     
     @Test
@@ -75,7 +75,7 @@ public class ContactDaoTests {
         assertNotNull(contacts);
         assertEquals(3, contacts.size(), "Должно быть 3 контакта");
         
-        System.out.println("✅ Найдено контактов: " + contacts.size());
+        System.out.println("Найдено контактов: " + contacts.size());
     }
     
     @Test
@@ -96,7 +96,7 @@ public class ContactDaoTests {
         assertNotNull(updatedContact);
         assertEquals(newPhone, updatedContact.getPhoneNumber());
         
-        System.out.println("✅ Телефон обновлен для контакта ID: " + saved.getId());
+        System.out.println("Телефон обновлен для контакта ID: " + saved.getId());
     }
     
     @Test
@@ -117,7 +117,7 @@ public class ContactDaoTests {
         assertNotNull(updatedContact);
         assertEquals(newEmail, updatedContact.getEmail());
         
-        System.out.println("✅ Email обновлен для контакта ID: " + saved.getId());
+        System.out.println("Email обновлен для контакта ID: " + saved.getId());
     }
     
     @Test
@@ -135,7 +135,7 @@ public class ContactDaoTests {
         Contact shouldBeNull = contactDao.findById(saved.getId());
         assertNull(shouldBeNull, "Контакт должен быть null после удаления");
         
-        System.out.println("✅ Контакт с ID " + saved.getId() + " удален");
+        System.out.println("Контакт с ID " + saved.getId() + " удален");
     }
     
     @Test
@@ -143,6 +143,6 @@ public class ContactDaoTests {
     public void testFindByIdNotFound() {
         Contact notFound = contactDao.findById(999L);
         assertNull(notFound, "Поиск несуществующего ID должен вернуть null");
-        System.out.println("✅ Поиск несуществующего контакта работает корректно");
+        System.out.println("Поиск несуществующего контакта работает корректно");
     }
 }

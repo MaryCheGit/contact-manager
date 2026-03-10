@@ -77,6 +77,18 @@ public class ContactDaoImpl implements ContactDao {
     }
     
     @Override
+    public void saveAll(List<Contact> contacts) {
+        String sql = "INSERT INTO contacts (first_name, last_name, phone_number, email) VALUES (?, ?, ?, ?)";
+        
+        jdbcTemplate.batchUpdate(sql, contacts, 100, (ps, contact) -> {
+            ps.setString(1, contact.getFirstName());
+            ps.setString(2, contact.getLastName());
+            ps.setString(3, contact.getPhoneNumber());
+            ps.setString(4, contact.getEmail());
+        });
+    }
+    
+    @Override
     public boolean updatePhoneNumber(Long id, String phoneNumber) {
         String sql = "UPDATE contacts SET phone_number = ? WHERE id = ?";
         int rowsAffected = jdbcTemplate.update(sql, phoneNumber, id);

@@ -1,0 +1,29 @@
+Режим вывода команд на экран (ECHO) включен.
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Maven
+target/
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+
+# Project specific
+contacts.csv
+large_contacts.csv
+*.csv
+!example.csv
+
+# OS specific
+.DS_Store
+Thumbs.db

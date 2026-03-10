@@ -10,4 +10,6 @@ public interface ContactDao {
     boolean updatePhoneNumber(Long id, String phoneNumber);
     boolean updateEmail(Long id, String email);
     boolean deleteById(Long id);
+
+    void saveAll(List<Contact> contacts);
 }
